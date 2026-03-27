@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+
+    /* Warm cream palette — light mode */
+    /* #F6EBDD → oklch(0.94 0.033 72) */
+    --background: 0.94 0.033 72;
+    /* #F3E6D6 → oklch(0.92 0.033 72) */
+    --header-bg: 0.92 0.033 72;
+    /* #FFFFFF */
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.012 50;
+    /* #231F1B → oklch(0.18 0.012 50) */
+    --foreground: 0.18 0.012 50;
+    /* #5A5048 → oklch(0.40 0.018 55) */
+    --muted-foreground: 0.4 0.018 55;
+    /* #E48733 → oklch(0.68 0.145 55) */
+    --primary: 0.68 0.145 55;
+    --primary-foreground: 1 0 0;
+    /* #6F8A5A → oklch(0.58 0.08 140) */
+    --green-badge: 0.58 0.08 140;
+    /* #F2B84B → oklch(0.80 0.13 80) */
+    --star-gold: 0.8 0.13 80;
+    /* #2B2C28 → oklch(0.22 0.008 120) */
+    --footer-dark: 0.22 0.008 120;
+
+    --border: 0.88 0.025 72;
+    --input: 0.88 0.025 72;
+    --ring: 0.68 0.145 55;
+    --muted: 0.91 0.025 72;
+    --accent: 0.91 0.025 72;
+    --accent-foreground: 0.18 0.012 50;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.012 50;
+    --secondary: 0.91 0.025 72;
+    --secondary-foreground: 0.18 0.012 50;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --chart-1: 0.68 0.145 55;
+    --chart-2: 0.58 0.08 140;
+    --chart-3: 0.8 0.13 80;
+    --chart-4: 0.577 0.245 27.325;
+    --chart-5: 0.55 0.12 200;
+    --sidebar: 0.92 0.033 72;
+    --sidebar-foreground: 0.18 0.012 50;
+    --sidebar-primary: 0.68 0.145 55;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.91 0.025 72;
+    --sidebar-accent-foreground: 0.18 0.012 50;
+    --sidebar-border: 0.88 0.025 72;
+    --sidebar-ring: 0.68 0.145 55;
+  }
+
+  .dark {
+    /* #1C1916 → oklch(0.15 0.01 55) */
+    --background: 0.15 0.01 55;
+    --header-bg: 0.18 0.012 55;
+    --foreground: 0.93 0.015 72;
+    --card: 0.2 0.012 55;
+    --card-foreground: 0.93 0.015 72;
+    --muted-foreground: 0.65 0.01 60;
+    --primary: 0.7 0.15 55;
+    --primary-foreground: 0.98 0 0;
+    --border: 0.28 0.01 60;
+    --input: 0.28 0.01 60;
+    --ring: 0.7 0.15 55;
+    --muted: 0.24 0.01 55;
+    --accent: 0.24 0.01 55;
+    --accent-foreground: 0.93 0.015 72;
+    --popover: 0.22 0.012 55;
+    --popover-foreground: 0.93 0.015 72;
+    --secondary: 0.24 0.01 55;
+    --secondary-foreground: 0.93 0.015 72;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.985 0 0;
+    --footer-dark: 0.12 0.008 120;
+    --sidebar: 0.18 0.012 55;
+    --sidebar-foreground: 0.93 0.015 72;
+    --sidebar-primary: 0.7 0.15 55;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.24 0.01 55;
+    --sidebar-accent-foreground: 0.93 0.015 72;
+    --sidebar-border: 0.28 0.01 60;
+    --sidebar-ring: 0.7 0.15 55;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Fraunces", serif;
+  }
+}
+
+@layer utilities {
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  .btn-primary {
+    @apply bg-primary text-primary-foreground rounded-full px-6 py-2.5 font-semibold transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95;
+  }
+  .nav-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium text-sm;
+  }
+}
